@@ -1,0 +1,28 @@
+body .carousel {
+  height: 90vh;
+  text-align: center;
+  perspective: 130vh;
+  margin-top: -12.8rem;
+}
+.carousel-item {
+  top: -23vh !important;
+  width: 35vh !important;
+  text-align: center !important;
+}
+.carousel-item > img {
+  height: 70vh !important;
+  width: auto !important;
+  margin-left: -5%;
+}
+
+@media only screen and (max-width: 600px) {
+  body .carousel {
+    margin-top: -5rem !important;
+  }
+}
+
+@media only screen and (max-height: 1025px) {
+  body .carousel {
+    margin-top: -8rem;
+  }
+}

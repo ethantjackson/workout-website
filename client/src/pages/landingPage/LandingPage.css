@@ -1,0 +1,79 @@
+.landingContainer {
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding-bottom: 10%;
+  /* margin-bottom: 0 !important; */
+}
+
+.landingImg {
+  /* height: 100vh; */
+  /* position: relative; */
+  /* bottom: -18vh; */
+  height: 74vh;
+  margin-top: 3vh;
+}
+
+.landingImgDiv {
+  border-right: 1px solid grey;
+  margin-top: 10vh;
+  height: 80vh;
+}
+.loginDiv {
+  padding: 15vh 7% 0 !important;
+}
+.loginForm {
+  margin-top: 1.5rem;
+}
+
+.signInButton {
+  padding: 0.4rem 1.3rem 0.5rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  background-color: rgb(40, 63, 104);
+  font-size: 1.8rem;
+  color: white;
+  box-shadow: 5px 5px 5px rgb(30, 36, 47);
+}
+.signInButton:hover {
+  background-color: #26d1ed;
+}
+.accountSubText {
+  margin-top: 1.6rem;
+  margin-bottom: -1rem;
+  color: grey;
+}
+.accountSubText i {
+  position: relative;
+  top: 0.2rem;
+}
+.accountSubText a:hover {
+  color: #26d1ed;
+}
+
+.socialBtnDiv {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  /* border: 1px solid blue; */
+}
+.socialBtn {
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  line-height: 1.5rem;
+  box-shadow: 5px 5px 5px rgb(30, 36, 47);
+}
+.socialBtn:hover {
+  filter: brightness(1.25);
+}
+.google {
+  background-color: #db4437;
+}
+.facebook {
+  background-color: #1877f2;
+}
+
+hr {
+  border-top: 1px solid red;
+  width: 25%;
+}
