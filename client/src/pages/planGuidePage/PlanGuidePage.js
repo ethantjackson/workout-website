@@ -111,7 +111,10 @@ const PlanGuidePage = ({ plan, setPlanID, setPlanName, setPlanSteps }) => {
       } else {
         return (
           <div className='restPreview'>
-            <div className='restPreviewText' style={{ fontSize: '2rem' }}>
+            <div
+              className='restPreviewText'
+              style={{ fontSize: '2rem', paddingTop: 'calc(50% - 1.5rem)' }}
+            >
               DONE!
             </div>
           </div>

@@ -56,7 +56,6 @@ export const addPlan = (plan) => async (dispatch) => {
 };
 
 export const updatePlan = (id, plan) => async (dispatch) => {
-  alert(id);
   try {
     const res = await fetch('user/plan/' + id, {
       method: 'PUT',
