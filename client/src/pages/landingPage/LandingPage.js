@@ -50,7 +50,16 @@ const LandingPage = ({
           <h1 className='instructionsHeader'>WORKOUT BUILDER</h1>
           <div className='row'>
             <div className='col s8 offset-s2 xl6 offset-xl3 socialBtnDiv'>
-              <a className='socialBtn facebook' href='#!'>
+              <a
+                className='socialBtn facebook'
+                href='#!'
+                onClick={() => {
+                  window.open(
+                    'http://localhost:5000/user/auth/facebook',
+                    '_self'
+                  );
+                }}
+              >
                 <i className='fab fa-facebook' />
                 &nbsp; Sign in with Facebook
               </a>

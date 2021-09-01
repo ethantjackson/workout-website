@@ -62,8 +62,28 @@ userRouter.get(
     // console.log('user: ');
     // console.log(req.user);
     if (req.isAuthenticated()) {
-      const { id, displayName } = req.user;
-      const token = signToken(id);
+      const { _id } = req.user;
+      const token = signToken(_id);
+      res.cookie('access_token', token, { httpOnly: true, sameSite: true });
+      res.redirect('http://localhost:3000/home-page');
+    }
+  }
+);
+
+userRouter.get(
+  '/auth/facebook',
+  passport.authenticate('facebook', {
+    session: false,
+  })
+);
+
+userRouter.get(
+  '/auth/facebook/callback',
+  passport.authenticate('facebook', { failureRedirect: '/', session: false }),
+  function (req, res) {
+    if (req.isAuthenticated()) {
+      const { _id } = req.user;
+      const token = signToken(_id);
       res.cookie('access_token', token, { httpOnly: true, sameSite: true });
       res.redirect('http://localhost:3000/home-page');
     }
