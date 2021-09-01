@@ -3,11 +3,17 @@ import CreateAccountModal from '../../components/layout/createAccountModal/Creat
 import { Front } from '../../img/index';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { loginUser, setMessage } from '../../actions/UserActions';
+import { googleLogin, loginUser, setMessage } from '../../actions/UserActions';
 import M from 'materialize-css/dist/js/materialize.min.js';
 import './LandingPage.css';
 
-const LandingPage = ({ loginUser, setMessage, isAuthenticated, message }) => {
+const LandingPage = ({
+  googleLogin,
+  loginUser,
+  setMessage,
+  isAuthenticated,
+  message,
+}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -42,15 +48,30 @@ const LandingPage = ({ loginUser, setMessage, isAuthenticated, message }) => {
         </div>
         <div className='col s12 l6 loginDiv'>
           <h1 className='instructionsHeader'>WORKOUT BUILDER</h1>
-          <div className='socialBtnDiv'>
-            <a className='socialBtn facebook' href='#!'>
-              <i className='fab fa-facebook'></i> &nbsp; Sign in with Facebook
-            </a>
+          <div className='row'>
+            <div className='col s8 offset-s2 xl6 offset-xl3 socialBtnDiv'>
+              <a className='socialBtn facebook' href='#!'>
+                <i className='fab fa-facebook' />
+                &nbsp; Sign in with Facebook
+              </a>
+            </div>
           </div>
-          <div className='socialBtnDiv'>
-            <a className='socialBtn google' href='#!'>
-              <i className='fab fa-google'></i> &nbsp; Sign in with Google
-            </a>
+          <div className='row'>
+            <div className='col s8 offset-s2 xl6 offset-xl3 socialBtnDiv'>
+              <a
+                className='socialBtn google'
+                href='#!'
+                onClick={() => {
+                  window.open(
+                    'http://localhost:5000/user/auth/google',
+                    '_self'
+                  );
+                  // googleLogin();
+                }}
+              >
+                <i className='fab fa-google' /> &nbsp; Sign in with Google
+              </a>
+            </div>
           </div>
           {/* <hr /> */}
           <form className='loginForm'>
@@ -101,6 +122,7 @@ const LandingPage = ({ loginUser, setMessage, isAuthenticated, message }) => {
 
 LandingPage.propTypes = {
   isAuthenticated: PropTypes.bool.isRequired,
+  googleLogin: PropTypes.func.isRequired,
   loginUser: PropTypes.func.isRequired,
   setMessage: PropTypes.func.isRequired,
 };
@@ -110,4 +132,6 @@ const mapStateToProps = (state) => ({
   message: state.user.message,
 });
 
-export default connect(mapStateToProps, { loginUser, setMessage })(LandingPage);
+export default connect(mapStateToProps, { googleLogin, loginUser, setMessage })(
+  LandingPage
+);

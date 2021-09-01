@@ -1,14 +1,36 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
+const findOrCreate = require('mongoose-findorcreate');
 
 const UserSchema = new mongoose.Schema({
-  email: { type: String, unique: true },
-  name: String,
-  password: String,
-  googleId: String,
-  facebookId: String,
+  email: {
+    type: String,
+    trim: true,
+    index: {
+      unique: true,
+      partialFilterExpression: { email: { $type: 'string' } },
+    },
+  },
+  name: { type: String, trim: true },
+  password: { type: String, trim: true },
+  googleId: {
+    type: String,
+    index: {
+      unique: true,
+      partialFilterExpression: { googleId: { $type: 'string' } },
+    },
+  },
+  facebookId: {
+    type: String,
+    index: {
+      unique: true,
+      partialFilterExpression: { facebookId: { $type: 'string' } },
+    },
+  },
   workoutPlans: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Plan' }],
 });
+
+UserSchema.plugin(findOrCreate);
 
 UserSchema.pre('save', function (next) {
   if (!this.isModified('password')) return next();

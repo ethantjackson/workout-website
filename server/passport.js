@@ -2,6 +2,8 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const JwtStrategy = require('passport-jwt').Strategy;
 const User = require('./models/User');
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
+// const findOrCreate = require('mongoose-findorcreate');
 
 const cookieExtractor = (req) => {
   let token = null;
@@ -23,6 +25,24 @@ passport.use(
         if (user) return done(null, user);
         else return done(null, false);
       });
+    }
+  )
+);
+
+passport.use(
+  new GoogleStrategy(
+    {
+      clientID: process.env.GOOGLE_ID,
+      clientSecret: process.env.GOOGLE_SECRET,
+      callbackURL: '/user/auth/google/callback',
+    },
+    function (accessToken, refreshToken, profile, cb) {
+      User.findOrCreate(
+        { googleId: profile.id, name: profile.displayName },
+        function (err, user) {
+          return cb(err, user);
+        }
+      );
     }
   )
 );
