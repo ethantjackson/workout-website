@@ -65,6 +65,8 @@
   max-width: 100%;
   height: auto;
   margin-bottom: 1rem;
+  box-shadow: 5px 5px 15px #2222225b;
+  border: 1px solid rgba(61, 61, 61, 0.521);
 }
 
 .homeActionDescription {

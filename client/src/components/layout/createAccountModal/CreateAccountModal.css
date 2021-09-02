@@ -6,6 +6,7 @@
   background-color: #282c34 !important;
   border-radius: 1rem !important;
   padding: 5% !important;
+  overflow-y: auto !important;
 }
 .modal-content {
   height: auto;
@@ -39,6 +40,8 @@
 .accountFeatureImg {
   width: 100%;
   margin-bottom: 1rem;
+  box-shadow: 5px 5px 15px #2222225b;
+  border: 1px solid rgba(61, 61, 61, 0.521);
 }
 .accountFeatureDescription {
   color: rgb(200, 199, 199);

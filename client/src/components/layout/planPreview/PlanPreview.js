@@ -28,8 +28,8 @@ const PlanPreview = ({ steps, selectedWorkout }) => {
 
   return (
     <div className='planPreview'>
-      {workoutImgs.map((img) => (
-        <div key={img} className='stepPreview'>
+      {workoutImgs.map((img, index) => (
+        <div key={img + index} className='stepPreview'>
           <img
             className={selectedWorkout ? 'selectedWorkoutImg' : 'workoutImg'}
             src={img}

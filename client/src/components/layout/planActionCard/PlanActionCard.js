@@ -102,7 +102,7 @@ const PlanActionCard = ({
               }
             >
               <img
-                className='workoutImg'
+                className='cardWorkoutImg'
                 src={workout.demo}
                 alt='workout-img'
               />

@@ -30,6 +30,8 @@ body {
 
 .instructionsSubHeader {
   color: #26d1ed;
+  margin-top: -2vh;
+  margin-bottom: -1vh;
   z-index: 2;
   position: relative;
 }
@@ -90,6 +92,7 @@ input {
   }
   .instructionsSubHeader {
     font-size: 1.5rem;
+    margin-bottom: 3vh;
   }
   label {
     font-size: 0.8rem;

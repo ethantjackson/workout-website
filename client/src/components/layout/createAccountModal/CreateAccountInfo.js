@@ -1,62 +1,51 @@
 import React from 'react';
-import EmailImg from '../../../img/email.jpeg';
-import CustomImg from '../../../img/custom.jpeg';
-import SocialImg from '../../../img/socialMedia.jpeg';
+import CreatePlanImg from '../../../img/createPlan.png';
+import WorkoutFinderImg from '../../../img/findWorkout.png';
+import UsePlanImg from '../../../img/usePlan.png';
 import './CreateAccountModal.css';
 
 const CreateAccountInfo = () => {
   return (
     <div>
       <h1 className='instructionsHeader'>
-        What extra features do I get from an account?
+        What features come with my account?
       </h1>
       <div className='row'>
         <div className='col s12 xl6 accountFeatureDiv'>
           <img
+            src={CreatePlanImg}
+            alt='email-img'
             className='accountFeatureImg'
-            src='https://successiblelife.com/wp-content/uploads/2019/07/Workout-Plan-for-Beginners.jpeg'
-            alt='workout-plan-img'
           />
-          <h4 className='accountFeatureTitle'>Workout Plans</h4>
+          <h4 className='accountFeatureTitle'>Make A Plan!</h4>
           <p className='accountFeatureDescription'>
-            Use the in-depth workout finder to build comprehensive workouts. You
-            can save these workout plans for future use and edit them as you see
-            fit.
-          </p>
-        </div>
-        <div className='col s12 xl6 accountFeatureDiv'>
-          <img src={EmailImg} alt='email-img' className='accountFeatureImg' />
-          <h4 className='accountFeatureTitle'>Stay On Track!</h4>
-          <p className='accountFeatureDescription'>
-            Sign up for scheduled email reminders to help you keep the momentum
-            going. Send workout plans to make a routine or opt in for periodic
-            motivational messages.
+            Use the Workout Finder to put together your custom workout plans,
+            complete with reps, sets, and rest times.
           </p>
         </div>
         <div className='col s12 xl6 accountFeatureDiv'>
           <img
-            src={CustomImg}
-            alt='custom-workout-img'
-            className='accountFeatureImg'
-          />
-          <h4 className='accountFeatureTitle'>Custom Workouts</h4>
-          <p className='accountFeatureDescription'>
-            Don't see your equipment in the workout finder? Want to work a
-            particular muscle group? Creating an account allows you to add
-            custom workouts to your own personal workout database.
-          </p>
-        </div>
-        <div className='col s12 xl6 accountFeatureDiv'>
-          <img
-            src={SocialImg}
+            src={UsePlanImg}
             alt='social-media-img'
             className='accountFeatureImg'
           />
-          <h4 className='accountFeatureTitle'>Share Your Progress</h4>
+          <h4 className='accountFeatureTitle'>Guided Fitness</h4>
           <p className='accountFeatureDescription'>
-            Connect to social media to share your custom workouts and workout
-            plans. Import other users' custom workouts and plans to add to your
-            own collection.
+            Utilize your personalized workout plans to run custom guided
+            workouts, including rest timers and step-by-step instruction.
+          </p>
+        </div>
+        <div className='col s12 xl6 offset-xl3 accountFeatureDiv'>
+          <img
+            className='accountFeatureImg'
+            src={WorkoutFinderImg}
+            alt='workout-finder-img'
+          />
+          <h4 className='accountFeatureTitle'>Workout Finder</h4>
+          <p className='accountFeatureDescription'>
+            Use the in-depth Workout Finder to search our extensive workout
+            database. Explore muscles worked, video demonstrations, and helpful
+            tips for each workout.
           </p>
         </div>
       </div>
