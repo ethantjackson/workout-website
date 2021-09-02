@@ -18,7 +18,7 @@ Functionality for Workout Builder includes a Workout Finder, Workout Plan Creato
 
 - 📫 How to reach me **ethantjackson44@gmail.com**
 
-- 📄 Know about my experiences [www.linkedin.com/in/ethan-jackson-03b37b195](www.linkedin.com/in/ethan-jackson-03b37b195)
+- 📄 Learn about my experiences [www.linkedin.com/in/ethan-jackson-03b37b195](www.linkedin.com/in/ethan-jackson-03b37b195)
 
 - ⚡ Fun fact **I love making music! I enjoy messing around on guitar, piano, and trumpet.**
 
