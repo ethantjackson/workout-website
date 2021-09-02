@@ -3,6 +3,7 @@
   padding: 0.4rem 1.3rem 0.5rem;
   border-radius: 1rem;
   cursor: pointer;
+  z-index: 2;
   top: 7rem;
   right: 7%;
   background-color: rgb(40, 63, 104);
