@@ -48,6 +48,48 @@ userRouter.post('/register', (req, res) => {
   });
 });
 
+userRouter.get(
+  '/auth/google',
+  passport.authenticate('google', { scope: ['profile'], session: false })
+);
+
+userRouter.get(
+  '/auth/google/callback',
+  passport.authenticate('google', { failureRedirect: '/', session: false }),
+  function (req, res) {
+    // console.log('authenticated: ');
+    // console.log(req.isAuthenticated());
+    // console.log('user: ');
+    // console.log(req.user);
+    if (req.isAuthenticated()) {
+      const { _id } = req.user;
+      const token = signToken(_id);
+      res.cookie('access_token', token, { httpOnly: true, sameSite: true });
+      res.redirect('http://localhost:3000/home-page');
+    }
+  }
+);
+
+userRouter.get(
+  '/auth/facebook',
+  passport.authenticate('facebook', {
+    session: false,
+  })
+);
+
+userRouter.get(
+  '/auth/facebook/callback',
+  passport.authenticate('facebook', { failureRedirect: '/', session: false }),
+  function (req, res) {
+    if (req.isAuthenticated()) {
+      const { _id } = req.user;
+      const token = signToken(_id);
+      res.cookie('access_token', token, { httpOnly: true, sameSite: true });
+      res.redirect('http://localhost:3000/home-page');
+    }
+  }
+);
+
 userRouter.post(
   '/login',
   passport.authenticate('local', { session: false }),

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { registerUser, loginUser } from '../../../actions/UserActions';
 import M from 'materialize-css/dist/js/materialize.min.js';
+import './CreateAccountModal.css';
 
 const CreateAccountForm = ({ registerUser, loginUser }) => {
   const [email, setEmail] = useState('');

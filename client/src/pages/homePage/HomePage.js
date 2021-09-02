@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { BenchPress } from '../../img/index';
-import CreatePlanImg from '../../img/email.jpeg';
-import FindWorkoutImg from '../../img/custom.jpeg';
+import Icon from '../../img/icon.png';
+import CreatePlanImg from '../../img/createPlan.png';
+import FindWorkoutImg from '../../img/findWorkout.png';
+import UsePlanImg from '../../img/usePlan.png';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { logoutUser, setMessage } from '../../actions/UserActions';
@@ -57,8 +58,7 @@ const HomePage = ({
       <div className='topBar'>
         <div className='siteDiv'>
           <p className='siteTitle'>
-            <img className='siteIcon' src={BenchPress} alt='site-icon' />{' '}
-            &nbsp;&nbsp;
+            <img className='siteIcon' src={Icon} alt='site-icon' /> &nbsp;&nbsp;
             {windowSize.width > 550 && 'WORKOUT BUILDER'}
           </p>
         </div>
@@ -118,11 +118,7 @@ const HomePage = ({
           </div>
           <div className='col s12 m6 offset-m3 l4'>
             <div className='homeActionDiv'>
-              <img
-                className='homeActionImg'
-                src='https://successiblelife.com/wp-content/uploads/2019/07/Workout-Plan-for-Beginners.jpeg'
-                alt='plan-img'
-              />
+              <img className='homeActionImg' src={UsePlanImg} alt='plan-img' />
               <br />
               <a href='/plans' className='homeActions'>
                 Use Workout Plans

@@ -9,6 +9,20 @@ import {
 
 // TODO: login, register, logout, isauthenticated
 // after each action, set curr user appropriately
+export const googleLogin = () => async (dispatch) => {
+  try {
+    console.log('reached');
+    const res = await fetch('/auth/google');
+    const data = await res.json();
+    console.log(data);
+  } catch (err) {
+    console.log(err);
+    dispatch({
+      type: USERS_ERROR,
+      payload: err.response.data,
+    });
+  }
+};
 
 export const loginUser = (user) => async (dispatch) => {
   try {
