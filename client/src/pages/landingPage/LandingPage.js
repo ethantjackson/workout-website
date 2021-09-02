@@ -3,17 +3,11 @@ import CreateAccountModal from '../../components/layout/createAccountModal/Creat
 import { Front } from '../../img/index';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { googleLogin, loginUser, setMessage } from '../../actions/UserActions';
+import { loginUser, setMessage } from '../../actions/UserActions';
 import M from 'materialize-css/dist/js/materialize.min.js';
 import './LandingPage.css';
 
-const LandingPage = ({
-  googleLogin,
-  loginUser,
-  setMessage,
-  isAuthenticated,
-  message,
-}) => {
+const LandingPage = ({ loginUser, setMessage, isAuthenticated, message }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -75,7 +69,6 @@ const LandingPage = ({
                     'http://localhost:5000/user/auth/google',
                     '_self'
                   );
-                  // googleLogin();
                 }}
               >
                 <i className='fab fa-google' /> &nbsp; Sign in with Google
@@ -131,7 +124,6 @@ const LandingPage = ({
 
 LandingPage.propTypes = {
   isAuthenticated: PropTypes.bool.isRequired,
-  googleLogin: PropTypes.func.isRequired,
   loginUser: PropTypes.func.isRequired,
   setMessage: PropTypes.func.isRequired,
 };
@@ -141,6 +133,4 @@ const mapStateToProps = (state) => ({
   message: state.user.message,
 });
 
-export default connect(mapStateToProps, { googleLogin, loginUser, setMessage })(
-  LandingPage
-);
+export default connect(mapStateToProps, { loginUser, setMessage })(LandingPage);

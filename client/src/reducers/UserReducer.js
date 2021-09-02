@@ -5,6 +5,7 @@ import {
   SET_MESSAGE,
   SET_AUTHENTICATED,
   USERS_ERROR,
+  CLEAR_USER,
 } from '../actions/types';
 
 //TODO implement toastMessage (set ToastMessage on 401 res in actions)
@@ -45,12 +46,18 @@ const UserReducer = (state = initialState, action) => {
         ...state,
         isAuthenticated: action.payload,
       };
+    case CLEAR_USER:
+      return {
+        ...initialState,
+        message: state.message,
+      };
     case USERS_ERROR:
       console.error(action.payload);
       return {
         ...state,
         error: action.payload,
       };
+
     default:
       return state;
   }

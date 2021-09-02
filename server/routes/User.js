@@ -57,10 +57,6 @@ userRouter.get(
   '/auth/google/callback',
   passport.authenticate('google', { failureRedirect: '/', session: false }),
   function (req, res) {
-    // console.log('authenticated: ');
-    // console.log(req.isAuthenticated());
-    // console.log('user: ');
-    // console.log(req.user);
     if (req.isAuthenticated()) {
       const { _id } = req.user;
       const token = signToken(_id);

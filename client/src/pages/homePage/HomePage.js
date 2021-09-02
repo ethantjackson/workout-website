@@ -3,6 +3,7 @@ import Icon from '../../img/icon.png';
 import CreatePlanImg from '../../img/createPlan.png';
 import FindWorkoutImg from '../../img/findWorkout.png';
 import UsePlanImg from '../../img/usePlan.png';
+import Preloader from '../../components/layout/Preloader';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { logoutUser, setMessage } from '../../actions/UserActions';
@@ -52,6 +53,7 @@ const HomePage = ({
     e.preventDefault();
     logoutUser();
   };
+  if (!currUser) return <Preloader />;
 
   return (
     <>
@@ -137,7 +139,7 @@ const HomePage = ({
 
 HomePage.propTypes = {
   isAuthenticated: PropTypes.bool.isRequired,
-  currUser: PropTypes.object.isRequired,
+  currUser: PropTypes.object,
   logoutUser: PropTypes.func.isRequired,
   setMessage: PropTypes.func.isRequired,
 };

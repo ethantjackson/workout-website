@@ -5,24 +5,8 @@ import {
   SET_MESSAGE,
   SET_AUTHENTICATED,
   USERS_ERROR,
+  CLEAR_USER,
 } from './types';
-
-// TODO: login, register, logout, isauthenticated
-// after each action, set curr user appropriately
-export const googleLogin = () => async (dispatch) => {
-  try {
-    console.log('reached');
-    const res = await fetch('/auth/google');
-    const data = await res.json();
-    console.log(data);
-  } catch (err) {
-    console.log(err);
-    dispatch({
-      type: USERS_ERROR,
-      payload: err.response.data,
-    });
-  }
-};
 
 export const loginUser = (user) => async (dispatch) => {
   try {
@@ -50,12 +34,7 @@ export const loginUser = (user) => async (dispatch) => {
     } else {
       //dispatch error message username or password incorrect
       dispatch({
-        type: SET_AUTHENTICATED,
-        payload: false,
-      });
-      dispatch({
-        type: SET_CURR_USER,
-        payload: { email: '', name: '' },
+        type: CLEAR_USER,
       });
       dispatch({
         type: SET_MESSAGE,
@@ -137,16 +116,7 @@ export const logoutUser = () => async (dispatch) => {
     const data = await res.json();
     if (data.success) {
       dispatch({
-        type: SET_AUTHENTICATED,
-        payload: false,
-      });
-      dispatch({
-        type: SET_CURR_USER,
-        payload: data.user, //empty user
-      });
-      dispatch({
-        type: SET_MESSAGE,
-        payload: null,
+        type: CLEAR_USER,
       });
     } else {
       dispatch({
@@ -182,12 +152,7 @@ export const checkAuthenticated = () => async (dispatch) => {
       });
     } else {
       dispatch({
-        type: SET_AUTHENTICATED,
-        payload: false,
-      });
-      dispatch({
-        type: SET_CURR_USER,
-        payload: { email: '', name: '' },
+        type: CLEAR_USER,
       });
     }
   } catch (err) {
