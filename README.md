@@ -8,6 +8,8 @@ Workout Builder's front end incorporates several materialzie components, includi
 
 Functionality for Workout Builder includes a Workout Finder, Workout Plan Creator, and Workout Guide. The Workout Finder allows the user to find workouts based on worked muscle and sub-muscle groups, and provides an interface for users to explore workout video demonstrations and tips. The Workout Plan Creator provides an interface for the user to create their own custom workout plan using the Workout Finder. Here, the user can specify reps, sets, and rest times for each workout step. The Workout Guide generates a step-by-step exercise guide based on a selected user-generated workout plan. The Workout Guide details each step of the users workout, complete with reps, sets, and exercise tips and video demos. I have also implemented a rest timer to time the user's rests between sets.
 
+
+<br />
 <h2 align="center">Hi 👋, I'm Ethan Jackson</h2>
 <h3 align="center">an aspiring full stack developer and student at UCLA.</h3>
 <br />
