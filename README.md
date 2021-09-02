@@ -1,5 +1,5 @@
-<h3 align="center">Hi 👋, I'm Ethan Jackson</h3>
-<h3 align="center">an aspiring full stack developer and student at UCLA.</h3>\
+<h2 align="center">Hi 👋, I'm Ethan Jackson</h2>
+<h3 align="center">an aspiring full stack developer and student at UCLA.</h3>
 <br />
 
 - 👨‍💻 All of my projects are available at [https://www.ethantjackson.xyz/](https://www.ethantjackson.xyz/)
