@@ -4,7 +4,7 @@ Workout Builder has been my summer web dev project. Workout Builder was built wi
 
 Workout Builder includes a robust user system, with hashed passwords using bcrypt and JWT authentication for protected routes. I have also implemented Google OAuth and Facebook login strategies using Passport. 
 
-Workout Builder's front end incorporates several Materialzie components, including cards, carousels, and tooltips for a more streamlined user experience. Furthermore, I utilized the Materialize grid system to allow for responsive styling on all device types (from mobile to desktop).
+Workout Builder's front end incorporates several Materialzie components, including cards, carousels, and tooltips for a more streamlined user experience. Furthermore, I utilized the Materialize grid system to allow for responsive styling on all device types (from mobile to desktop). I also utilized a persisted Redux store, to allow for global data access accross this multi-page website.
 
 Functionality for Workout Builder includes a Workout Finder, Workout Plan Creator, and Workout Guide. The Workout Finder allows the user to find workouts based on worked muscle and sub-muscle groups, and provides an interface for users to explore workout video demonstrations and tips. The Workout Plan Creator provides an interface for the user to create their own custom workout plan using the Workout Finder. Here, the user can specify reps, sets, and rest times for each workout step. The Workout Guide generates a step-by-step exercise guide based on a selected user-generated workout plan. The Workout Guide details each step of the users workout, complete with reps, sets, and exercise tips and video demos. I have also implemented a rest timer to time the user's rests between sets.
 
