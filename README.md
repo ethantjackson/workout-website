@@ -1,5 +1,7 @@
 # Workout Builder
 https://workout-builder.netlify.app/
+![image](https://user-images.githubusercontent.com/71403787/132109652-6d5f2996-ced2-461f-afdb-7076f8ab1425.png)
+
 
 Workout Builder has been my summer web dev project, with the purpose of solidifying my front and back end understanding. Workout Builder was built with the MERN stack, incorporating a front end styled with Materialize and custom css and a custom workout API including over 250 workouts. 
 
