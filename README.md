@@ -3,7 +3,7 @@ https://workout-builder.netlify.app/
 
 Workout Builder has been my summer web dev project, with the purpose of solidifying my front and back end understanding. Workout Builder was built with the MERN stack, incorporating a front end styled with Materialize and custom css and a custom workout API including over 250 workouts. 
 
-Workout Builder includes a robust user system, with hashed passwords using bcrypt and JWT authentication for protected routes. I have also implemented a Google OAuth login strategy using Passport and JWT. 
+Workout Builder includes a robust user system, with hashed passwords using bcrypt and JWT authentication for protected routes. I have also implemented a Google OAuth login strategy using Passport. 
 
 Workout Builder's front end incorporates several Materialzie components, including cards, carousels, and tooltips for a more streamlined user experience. Furthermore, I utilized the Materialize grid system to allow for responsive styling on all device types (from mobile to desktop). I also utilized a persisted Redux store, to allow for global data access accross this multi-page website.
 
