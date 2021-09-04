@@ -32,8 +32,6 @@ export const setMuscleGroup = (muscleGroup) => {
 
 export const getEquipmentOptions = (subMuscles) => async (dispatch) => {
   try {
-    // setSelectionsLoading();
-
     const snakeCaseStringify = (arr) => {
       return arr.map((item) => _.snakeCase(item)).join('-');
     };

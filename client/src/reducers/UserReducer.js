@@ -1,9 +1,9 @@
 import {
   SET_CURR_USER,
+  SET_AUTHENTICATED,
   GET_CURR_USER_PLANS,
   DELETE_CURR_USER_PLAN,
   SET_MESSAGE,
-  SET_AUTHENTICATED,
   USERS_ERROR,
   CLEAR_USER,
 } from '../actions/types';
@@ -11,8 +11,8 @@ import {
 //TODO implement toastMessage (set ToastMessage on 401 res in actions)
 const initialState = {
   currUser: null,
-  currUserPlans: [],
   isAuthenticated: false,
+  currUserPlans: [],
   message: null,
   error: null,
 };
@@ -23,6 +23,11 @@ const UserReducer = (state = initialState, action) => {
       return {
         ...state,
         currUser: action.payload,
+      };
+    case SET_AUTHENTICATED:
+      return {
+        ...state,
+        isAuthenticated: action.payload,
       };
     case GET_CURR_USER_PLANS:
       return {
@@ -40,11 +45,6 @@ const UserReducer = (state = initialState, action) => {
       return {
         ...state,
         message: action.payload,
-      };
-    case SET_AUTHENTICATED:
-      return {
-        ...state,
-        isAuthenticated: action.payload,
       };
     case CLEAR_USER:
       return {

@@ -6,6 +6,7 @@ import { checkAuthenticated } from '../actions/UserActions';
 
 const PrivateRoute = ({
   component: Component,
+  currUser,
   isAuthenticated,
   checkAuthenticated,
   ...rest
@@ -29,6 +30,7 @@ const PrivateRoute = ({
 };
 
 const mapStateToProps = (state) => ({
+  currUser: state.user.currUser,
   isAuthenticated: state.user.isAuthenticated,
 });
 

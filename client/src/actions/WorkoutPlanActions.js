@@ -57,7 +57,7 @@ export const addPlan = (plan) => async (dispatch) => {
 
 export const updatePlan = (id, plan) => async (dispatch) => {
   try {
-    const res = await fetch('user/plan/' + id, {
+    const res = await fetch('/user/plan/' + id, {
       method: 'PUT',
       body: JSON.stringify(plan),
       headers: {

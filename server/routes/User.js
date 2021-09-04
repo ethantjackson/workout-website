@@ -60,8 +60,7 @@ userRouter.get(
     if (req.isAuthenticated()) {
       const { _id } = req.user;
       const token = signToken(_id);
-      res.cookie('access_token', token, { httpOnly: true, sameSite: true });
-      res.redirect('http://localhost:3000/home-page');
+      res.redirect('https://workout-builder.netlify.app/home-page/' + token);
     }
   }
 );
@@ -81,7 +80,7 @@ userRouter.get(
       const { _id } = req.user;
       const token = signToken(_id);
       res.cookie('access_token', token, { httpOnly: true, sameSite: true });
-      res.redirect('http://localhost:3000/home-page');
+      res.redirect('https://workout-builder.netlify.app/home-page');
     }
   }
 );
@@ -90,7 +89,6 @@ userRouter.post(
   '/login',
   passport.authenticate('local', { session: false }),
   (req, res) => {
-    // console.log(req);
     if (req.isAuthenticated()) {
       const { _id, email, name } = req.user;
       const token = signToken(_id);
@@ -100,7 +98,7 @@ userRouter.post(
   }
 );
 
-userRouter.get(
+userRouter.post(
   '/logout',
   passport.authenticate('jwt', { session: false }),
   (req, res) => {

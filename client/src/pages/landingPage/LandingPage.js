@@ -7,7 +7,7 @@ import { loginUser, setMessage } from '../../actions/UserActions';
 import M from 'materialize-css/dist/js/materialize.min.js';
 import './LandingPage.css';
 
-const LandingPage = ({ loginUser, setMessage, isAuthenticated, message }) => {
+const LandingPage = ({ loginUser, setMessage, message }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -18,13 +18,6 @@ const LandingPage = ({ loginUser, setMessage, isAuthenticated, message }) => {
       password: password,
     });
   };
-
-  // useEffect(() => {
-  //   if (isAuthenticated) {
-  //     history.push('/home-page');
-  //   }
-  //   //eslint-disable-next-line
-  // }, [isAuthenticated]);
 
   useEffect(() => {
     if (message) {
@@ -49,7 +42,7 @@ const LandingPage = ({ loginUser, setMessage, isAuthenticated, message }) => {
                 href='#!'
                 onClick={() => {
                   window.open(
-                    'http://localhost:5000/user/auth/facebook',
+                    'https://workout-builder-website.herokuapp.com/user/auth/facebook',
                     '_self'
                   );
                 }}
@@ -66,7 +59,7 @@ const LandingPage = ({ loginUser, setMessage, isAuthenticated, message }) => {
                 href='#!'
                 onClick={() => {
                   window.open(
-                    'http://localhost:5000/user/auth/google',
+                    'https://workout-builder-website.herokuapp.com/user/auth/google',
                     '_self'
                   );
                 }}
@@ -123,13 +116,11 @@ const LandingPage = ({ loginUser, setMessage, isAuthenticated, message }) => {
 };
 
 LandingPage.propTypes = {
-  isAuthenticated: PropTypes.bool.isRequired,
   loginUser: PropTypes.func.isRequired,
   setMessage: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
-  isAuthenticated: state.user.isAuthenticated,
   message: state.user.message,
 });
 

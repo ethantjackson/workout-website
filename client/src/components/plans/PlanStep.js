@@ -43,10 +43,7 @@ const PlanStep = ({
         <Preloader />
       ) : (
         <>
-          <div
-            className='col s4'
-            onClick={() => console.log(workout.name, _id)}
-          >
+          <div className='col s4'>
             <h4 className='workoutName'>{workout.name}</h4>
             <img
               className='workoutDemo'

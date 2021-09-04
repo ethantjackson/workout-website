@@ -1,9 +1,9 @@
 import {
   SET_CURR_USER,
+  SET_AUTHENTICATED,
   GET_CURR_USER_PLANS,
   DELETE_CURR_USER_PLAN,
   SET_MESSAGE,
-  SET_AUTHENTICATED,
   USERS_ERROR,
   CLEAR_USER,
 } from './types';
@@ -21,7 +21,7 @@ export const loginUser = (user) => async (dispatch) => {
       const data = await res.json();
       dispatch({
         type: SET_AUTHENTICATED,
-        payload: data.isAuthenticated,
+        payload: true,
       });
       dispatch({
         type: SET_CURR_USER,
@@ -112,16 +112,14 @@ export const registerUser = (user) => async (dispatch) => {
 
 export const logoutUser = () => async (dispatch) => {
   try {
-    const res = await fetch('/user/logout');
+    const res = await fetch('/user/logout', {
+      method: 'POST',
+      credentials: 'same-origin',
+    });
     const data = await res.json();
     if (data.success) {
       dispatch({
         type: CLEAR_USER,
-      });
-    } else {
-      dispatch({
-        type: SET_MESSAGE,
-        payload: 'Logout failed.',
       });
     }
   } catch (err) {
@@ -144,12 +142,13 @@ export const checkAuthenticated = () => async (dispatch) => {
       const data = await res.json();
       dispatch({
         type: SET_AUTHENTICATED,
-        payload: data.isAuthenticated,
+        payload: true,
       });
       dispatch({
         type: SET_CURR_USER,
         payload: data.user,
       });
+      return true;
     } else {
       dispatch({
         type: CLEAR_USER,
@@ -159,4 +158,5 @@ export const checkAuthenticated = () => async (dispatch) => {
     console.log(err);
     dispatch({ type: USERS_ERROR, payload: err.response.data });
   }
+  return false;
 };

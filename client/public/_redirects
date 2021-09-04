@@ -1,0 +1,3 @@
+/user/*  https://workout-builder-website.herokuapp.com/user/:splat  200
+/workout/*  https://workout-builder-website.herokuapp.com/workout/:splat  200
+/*    /index.html   200

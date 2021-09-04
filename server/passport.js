@@ -4,7 +4,6 @@ const JwtStrategy = require('passport-jwt').Strategy;
 const User = require('./models/User');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const FacebookStrategy = require('passport-facebook').Strategy;
-// const findOrCreate = require('mongoose-findorcreate');
 
 const cookieExtractor = (req) => {
   let token = null;

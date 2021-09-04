@@ -10,13 +10,7 @@ import { logoutUser, setMessage } from '../../actions/UserActions';
 import M from 'materialize-css/dist/js/materialize.min.js';
 import './HomePage.css';
 
-const HomePage = ({
-  logoutUser,
-  setMessage,
-  isAuthenticated,
-  message,
-  currUser,
-}) => {
+const HomePage = ({ logoutUser, setMessage, message, currUser }) => {
   const [windowSize, setWindowSize] = useState({
     width: undefined,
     height: undefined,
@@ -34,13 +28,6 @@ const HomePage = ({
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // useEffect(() => {
-  //   if (!isAuthenticated) {
-  //     history.push('/');
-  //   }
-  //   //eslint-disable-next-line
-  // }, [isAuthenticated]);
-
   useEffect(() => {
     if (message) {
       M.toast({ html: message });
@@ -49,7 +36,7 @@ const HomePage = ({
     //eslint-disable-next-line
   }, [message]);
 
-  const handleLogout = async (e) => {
+  const handleLogout = (e) => {
     e.preventDefault();
     logoutUser();
   };
@@ -138,14 +125,12 @@ const HomePage = ({
 };
 
 HomePage.propTypes = {
-  isAuthenticated: PropTypes.bool.isRequired,
   currUser: PropTypes.object,
   logoutUser: PropTypes.func.isRequired,
   setMessage: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
-  isAuthenticated: state.user.isAuthenticated,
   message: state.user.message,
   currUser: state.user.currUser,
 });

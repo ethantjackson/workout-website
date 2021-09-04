@@ -10,7 +10,6 @@ import {
   setPlanName,
   setPlanSteps,
 } from '../../actions/WorkoutPlanActions';
-// import M from 'materialize-css/dist/js/materialize.min.js';
 import './PlanGuidePage.css';
 
 const PlanGuidePage = ({ plan, setPlanID, setPlanName, setPlanSteps }) => {

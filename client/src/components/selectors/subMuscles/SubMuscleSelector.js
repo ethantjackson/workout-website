@@ -6,7 +6,6 @@ import { setSubMuscles } from '../../../actions/WorkoutActions';
 import PrimaryButton from '../../layout/primaryButton/PrimaryButton';
 import SecondaryButton from '../../layout/secondaryButton/SecondaryButton';
 import {
-  // Test,
   ClavicularPectoral,
   CostalPectoral,
   SternalPectoral,

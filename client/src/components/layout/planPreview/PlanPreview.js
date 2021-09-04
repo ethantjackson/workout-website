@@ -48,7 +48,6 @@ const PlanPreview = ({ steps, selectedWorkout }) => {
         <div className='stepPreview'>
           <img
             className='selectedWorkoutImg selected'
-            // className='workoutImg'
             src={selectedWorkout.demo}
             alt='selected-img'
           />

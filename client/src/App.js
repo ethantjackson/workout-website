@@ -1,7 +1,13 @@
 import React, { useEffect } from 'react';
 import PrivateRoute from './hocs/PrivateRoute';
 import UnPrivateRoute from './hocs/UnPrivateRoute';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+  useParams,
+} from 'react-router-dom';
 import LandingPage from './pages/landingPage/LandingPage';
 import HomePage from './pages/homePage/HomePage';
 import NewPlanPage from './pages/NewPlanPage';
@@ -20,10 +26,19 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import persistedStore from './store';
 
+import Cookies from 'universal-cookie';
+
 const App = () => {
   useEffect(() => {
     M.AutoInit();
   }, []);
+
+  const GetToken = () => {
+    let { token } = useParams();
+    const cookies = new Cookies();
+    cookies.set('access_token', token, { path: '/' });
+    return <Redirect to='/home-page' />;
+  };
 
   return (
     <Provider store={persistedStore.store}>
@@ -32,6 +47,7 @@ const App = () => {
           <Router>
             <Switch>
               <UnPrivateRoute exact path='/' component={LandingPage} />
+              <Route exact path='/home-page/:token' children={<GetToken />} />
               <PrivateRoute exact path='/home-page' component={HomePage} />
               <PrivateRoute exact path='/plan' component={NewPlanPage} />
               <PrivateRoute exact path='/edit-plan' component={EditPlanPage} />

@@ -19,6 +19,7 @@
     "redux-devtools-extension": "^2.13.9",
     "redux-persist": "^6.0.0",
     "redux-thunk": "^2.3.0",
+    "universal-cookie": "^4.0.4",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
@@ -46,5 +47,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:5000"
+  "proxy": "https://workout-builder-website.herokuapp.com"
 }

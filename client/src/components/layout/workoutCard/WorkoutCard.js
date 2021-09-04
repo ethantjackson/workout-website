@@ -17,7 +17,6 @@ const WorkoutCard = ({ workout, setSelectedWorkout }) => {
             rel={'external'}
             src={workout.demo}
             alt='card-img'
-            // style={{ height: '10vh', width: 'auto' }}
           />
         </div>
         <div className='card-content'>
