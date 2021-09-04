@@ -23,9 +23,6 @@
 .loginDiv {
   padding: 15vh 7% 0 !important;
 }
-.loginForm {
-  margin-top: 1.5rem;
-}
 
 .signInButton {
   padding: 0.4rem 1.3rem 0.5rem;
@@ -74,7 +71,19 @@
   background-color: #1877f2;
 }
 
-hr {
-  border-top: 1px solid red;
-  width: 25%;
+.hrRow {
+  margin-bottom: 0 !important;
+}
+.hr {
+  border-top: 0.3rem dotted rgb(97, 97, 97);
+}
+.hr span {
+  font-size: 1rem;
+  position: relative;
+  letter-spacing: 0.1rem;
+  color: rgb(177, 177, 177);
+  top: -1rem;
+  display: inline-block;
+  padding: 0 5%;
+  background-color: #282c34;
 }

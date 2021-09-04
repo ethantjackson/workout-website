@@ -36,7 +36,7 @@ const LandingPage = ({ loginUser, setMessage, message }) => {
         <div className='col s12 l6 loginDiv'>
           <h1 className='instructionsHeader'>WORKOUT BUILDER</h1>
           <div className='row'>
-            <div className='col s8 offset-s2 xl6 offset-xl3 socialBtnDiv'>
+            {/* <div className='col s8 offset-s2 xl6 offset-xl3 socialBtnDiv'>
               <a
                 className='socialBtn facebook'
                 href='#!'
@@ -50,7 +50,7 @@ const LandingPage = ({ loginUser, setMessage, message }) => {
                 <i className='fab fa-facebook' />
                 &nbsp; Sign in with Facebook
               </a>
-            </div>
+            </div> */}
           </div>
           <div className='row'>
             <div className='col s8 offset-s2 xl6 offset-xl3 socialBtnDiv'>
@@ -68,8 +68,12 @@ const LandingPage = ({ loginUser, setMessage, message }) => {
               </a>
             </div>
           </div>
-          {/* <hr /> */}
-          <form className='loginForm'>
+          <div className='row hrRow'>
+            <div className='col s4 offset-s4 xl2 offset-xl5 hr'>
+              <span>or</span>
+            </div>
+          </div>
+          <form>
             <div className='row'>
               <div className='input-field col s8 xl6 offset-s2 offset-xl3'>
                 <input
