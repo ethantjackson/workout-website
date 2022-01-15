@@ -17,11 +17,11 @@ Functionality for Workout Builder includes a Workout Finder, Workout Plan Creato
 
 - 👨‍💻 All of my projects are available at [https://www.ethantjackson.xyz/](https://www.ethantjackson.xyz/)
 
-- 📫 How to reach me **ethantjackson44@gmail.com**
+- 📫 Reach me at **ethantjackson44@gmail.com**
 
 - 📄 Learn about my experiences [www.linkedin.com/in/ethan-jackson-03b37b195](www.linkedin.com/in/ethan-jackson-03b37b195)
 
-- ⚡ Fun fact **I love making music! I enjoy messing around on guitar, piano, and trumpet.**
+- ⚡ Fun fact: **I love making music! I enjoy messing around on guitar, piano, and trumpet.**
 
 
 <h3 align="left">Languages and Tools:</h3>
